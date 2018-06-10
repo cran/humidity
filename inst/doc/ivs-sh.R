@@ -6,18 +6,15 @@ library(humidity)
 head(ivs)
 
 ## ---- message=FALSE------------------------------------------------------
-# tempature in Kelvin
-ivs$Tk <- C2K(ivs$T)
-# saturation vapor pressure in hPa
-ivs$Es <- SVP(ivs$Tk)
-# partial water vapor pressure in Pa
-ivs$E <- WVP(ivs$RH, ivs$Es)
-# absolute humidity in kg/m^3
-ivs$rho <- AH(ivs$E, ivs$Tk)
-# specific humidity in kg/kg
-ivs$q <- SH(ivs$E)
-# mixing ratio in kg/kg
-ivs$omega <- MR(ivs$q)
+library(tidyverse)
+ivs <- ivs %>% 
+  mutate(Tk = C2K(T), # tempature in Kelvin
+         Es = SVP(Tk), # saturation vapor pressure in hPa
+         E = WVP2(RH, Es), # partial water vapor pressure in Pa
+         rho = AH(E, Tk), # absolute humidity in kg/m^3
+         q = SH(E), # specific humidity in kg/kg
+         omega = MR(q), # mixing ratio in kg/kg
+         )
 # display calculation results
 head(ivs)
 

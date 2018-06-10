@@ -16,15 +16,12 @@ numeric temperature in degree Celsius (°C)
 convert temperature in Kelvin (K) into degree Celsius (°C)
 }
 \examples{
-\dontrun{
 K2C(0)
-}
-}
-\author{
-Jun Cai (\email{cai-j12@mails.tsinghua.edu.cn}), PhD candidate from
-Center for Earth System Science, Tsinghua University
 }
 \seealso{
 \code{\link{C2K}}.
 }
-
+\author{
+Jun Cai (\email{cai-j12@mails.tsinghua.edu.cn}), PhD candidate from
+Department of Earth System Science, Tsinghua University
+}

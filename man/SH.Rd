@@ -18,18 +18,15 @@ numeric specific humidity \eqn{q} (\eqn{kg/kg})
 calculate specific humidity \eqn{q} based on partial water vapor pressure \eqn{e} under given atmospheric pressure \eqn{p}
 }
 \examples{
-\dontrun{
 t <- 273.15
 Es <- SVP(t)
-e <- WVP(70, Es)
+e <- WVP2(70, Es)
 SH(e, p = 101325)
 }
+\seealso{
+\code{\link{WVP2}}, \code{\link{WVP2}}, \code{\link{AH}}, \code{\link{RH}}, \code{\link{MR}}.
 }
 \author{
 Jun Cai (\email{cai-j12@mails.tsinghua.edu.cn}), PhD candidate from
-Center for Earth System Science, Tsinghua University
+Department of Earth System Science, Tsinghua University
 }
-\seealso{
-\code{\link{WVP}}, \code{\link{AH}}, \code{\link{MR}}.
-}
-
