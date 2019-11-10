@@ -7,11 +7,12 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Jun Cai cai-j12@mails.tsinghua.edu.cn" />
 
-<meta name="date" content="2018-06-11" />
+<meta name="date" content="2019-11-10" />
 
 <title>Humidity Measures</title>
 
@@ -256,9 +257,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type="text/css">
 .main-container {
@@ -272,30 +271,90 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
 
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-</script>
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
 
 <!-- code folding -->
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -305,8 +364,8 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Humidity Measures</h1>
-<h4 class="author"><em>Jun Cai <a href="mailto:cai-j12@mails.tsinghua.edu.cn">cai-j12@mails.tsinghua.edu.cn</a></em></h4>
-<h4 class="date"><em>2018-06-11</em></h4>
+<h4 class="author">Jun Cai <a href="mailto:cai-j12@mails.tsinghua.edu.cn" class="email">cai-j12@mails.tsinghua.edu.cn</a></h4>
+<h4 class="date">2019-11-10</h4>
 
 </div>
 
@@ -318,8 +377,8 @@ $(document).ready(function () {
   e_s(T) = e_s(T_0)\times \exp \left(\frac{L}{R_w}\left(\frac{1}{T_0} - \frac{1}{T}\right)\right)
   \tag{1}
 \end{equation}\]</span>
-where <span class="math inline">\(e_s(T_0) = 6.11 hPa\)</span> is the saturation vapor pressure at a reference temperature <span class="math inline">\(T_0 = 273.15 K\)</span>, <span class="math inline">\(L = 2.5 \times 10^6 J/kg\)</span> is the <a href="http://en.wikipedia.org/wiki/Latent_heat">latent heat</a> of evaporation for water, and <span class="math inline">\(R_w = \frac{1000R}{M_w} = 461.52 J/(kg K)\)</span> is the <a href="http://en.wikipedia.org/wiki/Gas_constant#Specific_gas_constant">specific gas constant</a> for water vapor (where <span class="math inline">\(R = 8.3144621 J / (mol K)\)</span> is the molar <a href="http://en.wikipedia.org/wiki/Gas_constant">gas constant</a> and <span class="math inline">\(M_w = 18.01528 g/mol\)</span> is the <a href="http://en.wikipedia.org/wiki/Molar_mass">molar mass</a> of water vapor). More details refer to <span class="citation">Shaman and Kohn (<a href="#ref-Shaman2009">2009</a>)</span>.</p>
-<p>An alternative way to calculate saturation vapor pressure <span class="math inline">\(e_s\)</span> is per the equation proposed by <span class="citation">Murray (<a href="#ref-Murray1967">1967</a>)</span>.
+where <span class="math inline">\(e_s(T_0) = 6.11 hPa\)</span> is the saturation vapor pressure at a reference temperature <span class="math inline">\(T_0 = 273.15 K\)</span>, <span class="math inline">\(L = 2.5 \times 10^6 J/kg\)</span> is the <a href="http://en.wikipedia.org/wiki/Latent_heat">latent heat</a> of evaporation for water, and <span class="math inline">\(R_w = \frac{1000R}{M_w} = 461.52 J/(kg K)\)</span> is the <a href="http://en.wikipedia.org/wiki/Gas_constant#Specific_gas_constant">specific gas constant</a> for water vapor (where <span class="math inline">\(R = 8.3144621 J / (mol K)\)</span> is the molar <a href="http://en.wikipedia.org/wiki/Gas_constant">gas constant</a> and <span class="math inline">\(M_w = 18.01528 g/mol\)</span> is the <a href="http://en.wikipedia.org/wiki/Molar_mass">molar mass</a> of water vapor). More details refer to <span class="citation">Shaman and Kohn (<a href="#ref-Shaman-Kohn:2009" role="doc-biblioref">2009</a>)</span>.</p>
+<p>An alternative way to calculate saturation vapor pressure <span class="math inline">\(e_s\)</span> is per the equation proposed by <span class="citation">Murray (<a href="#ref-Murray:1967" role="doc-biblioref">1967</a>)</span>.
 <span class="math display">\[\begin{equation}
   e_s = 6.1078\exp{\left[\frac{a(T - 273.16)}{T - b}\right]}
 \end{equation}\]</span>
@@ -398,11 +457,11 @@ Substituting equations <a href="#eq:1">(1)</a> and <a href="#eq:6">(6)</a> into 
 <div id="references" class="section level2 unnumbered">
 <h2>References</h2>
 <div id="refs" class="references">
-<div id="ref-Murray1967">
-<p>Murray, F. W. 1967. “On the Computation of Saturation Vapor Pressure.” <em>J. Appl. Meteor.</em> 6 (1). American Meteorological Society: 203–4. <a href="https://doi.org/10.1175/1520-0450(1967)006%3C0203:OTCOSV%3E2.0.CO;2">https://doi.org/10.1175/1520-0450(1967)006%3C0203:OTCOSV%3E2.0.CO;2</a>.</p>
+<div id="ref-Murray:1967">
+<p>Murray, F. W. 1967. “On the Computation of Saturation Vapor Pressure.” <em>J. Appl. Meteor.</em> 6 (1): 203–4. <a href="https://doi.org/10.1175/1520-0450(1967)006%3C0203:OTCOSV%3E2.0.CO;2">https://doi.org/10.1175/1520-0450(1967)006%3C0203:OTCOSV%3E2.0.CO;2</a>.</p>
 </div>
-<div id="ref-Shaman2009">
-<p>Shaman, J., and M. Kohn. 2009. “Absolute Humidity Modulates Influenza Survival, Transmission, and Seasonality.” <em>PNAS</em> 106 (9). Natl Acad Sciences: 3243–8. <a href="https://doi.org/10.1073/pnas.0806852106" class="uri">https://doi.org/10.1073/pnas.0806852106</a>.</p>
+<div id="ref-Shaman-Kohn:2009">
+<p>Shaman, J., and M. Kohn. 2009. “Absolute Humidity Modulates Influenza Survival, Transmission, and Seasonality.” <em>PNAS</em> 106 (9): 3243–8. <a href="https://doi.org/10.1073/pnas.0806852106">https://doi.org/10.1073/pnas.0806852106</a>.</p>
 </div>
 </div>
 </div>
@@ -424,6 +483,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
